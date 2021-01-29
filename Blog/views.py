@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView , RetrieveAPIView
+from .permissions import Permission
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-# from .serializer import MoviesSerializer
-# from .models import Movies
-# from .models import Movies
 from .serializer import BlogSerializer
 from .models import Blog
 
@@ -11,7 +10,9 @@ from .models import Blog
 class BlogListView(ListAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
+    permissions_classes = (Permission,IsAuthenticatedOrReadOnly ) 
 
 class BlogDetailsView(RetrieveUpdateDestroyAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
+    permissions_classes = (Permission,IsAuthenticatedOrReadOnly) 

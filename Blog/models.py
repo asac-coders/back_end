@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 class Blog(models.Model):
     first_name = models.CharField(max_length=64)
-    Last_name = models.TextField()
+    Last_name = models.CharField(max_length=64)
     student_number = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     image = models.URLField()
     
