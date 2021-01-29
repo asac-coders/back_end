@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "back-end"
+version = "0.1.0"
+description = ""
+authors = ["AyaAbuRashed <ayanaser402@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.1.5"
+djangorestframework = "^3.12.2"
+
+[tool.poetry.dev-dependencies]
+black = "^20.8b1"
+pylint = "^2.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
