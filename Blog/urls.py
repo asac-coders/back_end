@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import MoviesDetailsView, MoviesListView
+from .views import BlogDetailsView, BlogListView
 
 urlpatterns = [ 
-       path('', MoviesListView.as_view(), name='movies'), 
-       path('<int:pk>/', MoviesDetailsView.as_view(), name='movies_details'),
+       path('', BlogListView.as_view(), name='blog'), 
+       path('<int:pk>/', BlogDetailsView.as_view(), name='blog_details'),
     ]
