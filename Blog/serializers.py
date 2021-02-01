@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 
-from .models import Blog ,Projects,Skils
+from .models import Blog, Projects,Skils
 
 class BlogSerializer(serializers.ModelSerializer):
 
@@ -22,6 +22,7 @@ class Skils_Serializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'student_number', 'html','css', 'js', 'react', 'nodejs', 'express','django', 'heroku', 'vercel',  'githab_pages', 'python', 'postgresql', 'mongodb', 'git' )
         model = Skils
+
 
 
 class UserSerializer(serializers.ModelSerializer):

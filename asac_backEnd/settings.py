@@ -12,13 +12,13 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import environ
+# import environ
 
-env = environ.Env(
-    # DEBUG is Flase by default
-    DEBUG = (bool, False)
-)
-environ.Env.read_env()
+# env = environ.Env(
+#     # DEBUG is Flase by default
+#     DEBUG = (bool, False)
+# )
+# environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str('SECRET_KEY')
+SECRET_KEY = 'y_88(33-z%^=ztu-sve2f!$7jsttygv=4n%5anh=p-avu5-a)@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -45,16 +45,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'corsheaders',
-    'Blog.apps.BlogConfig',
     'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders',
+    'Blog',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

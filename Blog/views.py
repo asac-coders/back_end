@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 from rest_framework.authentication import TokenAuthentication
 
-from .serializer import BlogSerializer, ProjectsSerializer, Skils_Serializer, UserSerializer
+from .serializers import BlogSerializer, ProjectsSerializer, Skils_Serializer, UserSerializer
 from .models import Blog,Projects , Skils
 from .permissions import PermissionsClass
 # Create your views here.
