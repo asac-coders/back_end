@@ -13,7 +13,7 @@ class BlogSerializer(serializers.ModelSerializer):
 class ProjectsSerializer(serializers.ModelSerializer):
 
     class Meta:
-        fields = ('id', 'student_number', 'project_name', 'live_url', 'github_url', 'description','features')
+        fields = ('id', 'student_number', 'project_name', 'live_url', 'github_url', 'description',)
         model = Projects
 
 

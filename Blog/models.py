@@ -28,14 +28,14 @@ class Projects(models.Model):
     project_name = models.CharField(max_length=63)
     live_url = models.URLField()
     github_url = models.URLField()
-    description=models.TextField()
-    features = models.TextField()
+    description=models.TextField(blank= True)
+    
     def __str__(self):
         return str(self.project_name)
 
 
 class Blog(models.Model):
-    student_number = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,unique=True)
+    student_number = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     first_name = models.CharField(max_length=64)
     Last_name = models.CharField(max_length=64)
     image = models.URLField(blank=True)
